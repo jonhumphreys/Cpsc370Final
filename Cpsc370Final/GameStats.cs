@@ -10,10 +10,15 @@ public class GameStats
     {
         TimeLeftInSeconds = timeLeftInSeconds;
         TotalPoints = totalPoints;
-        Console.WriteLine("========== " + CreateTimeString() + "s ======= " + CreatePointsString() + "p ==========");
+        Console.WriteLine(GetGameStatsString());
     }
 
-    public static String CreateTimeString()
+    public static String GetGameStatsString()
+    {
+        return "========== " + CreateTimeString() + "s ======= " + CreatePointsString() + "p ==========";
+    }
+
+    private static String CreateTimeString()
     {
         if (TimeLeftInSeconds < 10)
         {
@@ -23,7 +28,7 @@ public class GameStats
         return "" + TimeLeftInSeconds;
     }
 
-    public static String CreatePointsString()
+    private static String CreatePointsString()
     {
         if (TotalPoints < 10)
         {
