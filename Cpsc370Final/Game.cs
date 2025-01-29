@@ -40,6 +40,6 @@ public class Game
         int TEMPORARY_POINTS_VALUE = 0; // replace when points system implemented
         int timeLeftInSeconds = (maxTicks - elapsedTicks) / (1000 / millisecondsPerTick);
         Console.Clear();
-        UserInterface.Print(timeLeftInSeconds, TEMPORARY_POINTS_VALUE); 
+        GameStats.Print(timeLeftInSeconds, TEMPORARY_POINTS_VALUE); 
     }
 }

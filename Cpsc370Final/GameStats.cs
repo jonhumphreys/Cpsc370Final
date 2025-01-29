@@ -1,6 +1,6 @@
 namespace Cpsc370Final;
 
-public class UserInterface
+public class GameStats
 {
     // define UI elements such as timer and score
     private static int TimeLeftInSeconds = 0;
