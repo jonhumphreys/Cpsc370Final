@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         if (args.Length < 1)
-            Console.WriteLine("Usage: Cpsc370Final <arguments>");
+            Console.WriteLine("Usage: Cpsc370Final.exe <arguments>");
         
         // you can delete this if/when you like
         ShowArguments(args);
