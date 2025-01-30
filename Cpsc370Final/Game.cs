@@ -12,6 +12,7 @@ public class Game
     private static Timer myTimer = new Timer(millisecondsPerTick);
     private static int elapsedTicks = 0;
     private static int maxTicks = 60;
+    private int score;
 
     public static Game GetInstance()
     {
