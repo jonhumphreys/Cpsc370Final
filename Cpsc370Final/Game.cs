@@ -15,6 +15,7 @@ public class Game
     // private static int maxTicks = 60;
     private TimeSpan playTime;
     private Score score;
+    private Grid grid;
     public static Game GetInstance()
     {
         if (instance == null)
@@ -30,6 +31,7 @@ public class Game
         playTime = TimeSpan.FromSeconds(60);
         consoleKeyboardInput = ConsoleKeyboardInput.getInstance();
         score = new Score();
+        grid = new Grid();
         // Attach IncrementTick method
         // myTimer.Elapsed += Tick;
         // Enable the Timer
@@ -52,11 +54,10 @@ public class Game
     
     public void Play()
     {
-        Grid grid = new Grid();
         Corgi corgi = new Corgi();
         DateTime startTime = DateTime.Now;
         int corgiLocation = Random.Shared.Next(1, 10);
-        
+        score.Reset();   
         Console.Clear();
         Console.WriteLine("Whack A Corgi (Corgi Edition)");
         Console.WriteLine("");
@@ -72,7 +73,9 @@ public class Game
             Render(corgi.GetCorgiCharacters());
             int selection;
             GetInput:
-            switch (consoleKeyboardInput.GetKeyboardInput().Key)
+            ConsoleKey userInput = ConsoleKey.None;
+            userInput = consoleKeyboardInput.GetKeyboardInput().Key;
+            switch (userInput)
             {
                 case ConsoleKey.D1 or ConsoleKey.NumPad1: selection = 1; break;
                 case ConsoleKey.D2 or ConsoleKey.NumPad2: selection = 2; break;
@@ -97,21 +100,25 @@ public class Game
                 Render(corgi.GetEmpty());
                 int newCorgiLocation = Random.Shared.Next(1, 9);
                 corgiLocation = newCorgiLocation >= corgiLocation ? newCorgiLocation + 1 : newCorgiLocation;
-                
+            } else
+            {
+                break;
             }
         }
+        EndGame();
+    }
+
+    private void EndGame()
+    {
         Console.CursorVisible = true;
         Console.Clear();
-        Console.WriteLine("Whack A Corgi (Corgi Edition)");
-        Console.WriteLine();
-        Console.WriteLine(grid.DisplayGrid());
-        Console.WriteLine();
         Console.WriteLine("Game Over. Score: " + score.GetScore());
         Console.WriteLine("Hopefully those Java noobs will learn their lesson and start using C#.");
         Console.WriteLine();
         Console.WriteLine("Press [Enter] To Continue...");
         Console.ReadLine();
     }
+
     private void Render(string @string)
     {
         int x = Console.CursorLeft;

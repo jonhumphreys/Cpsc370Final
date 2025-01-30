@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        ConsoleKeyboardInput consoleKeyboardInput = ConsoleKeyboardInput.getInstance();
         if (OperatingSystem.IsWindows())
         {
             Console.WindowWidth = Math.Max(Console.WindowWidth, 50);
@@ -22,7 +23,7 @@ class Program
             Console.WriteLine();
             Console.WriteLine("Play [enter], or quit [escape]?");
             GetInput:
-            switch (Console.ReadKey(true).Key)
+            switch (consoleKeyboardInput.GetKeyboardInput().Key)
             {
                 case ConsoleKey.Enter:
                     Game game = Game.GetInstance();
