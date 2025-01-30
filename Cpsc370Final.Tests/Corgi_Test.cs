@@ -1,6 +1,5 @@
 namespace Cpsc370Final.Tests;
 
-using xUnit;
 using System;
 
 public class Corgi_Test
@@ -23,8 +22,8 @@ public class Corgi_Test
     [Fact]
     public void Whack_Corgi_ShouldBeClearedFromBoard()
     {
-        string boardBefore = Corgi;
-        string boardAfter = Empty;
+        string boardBefore = "Corgi";
+        string boardAfter = string.Empty;
 
         Assert.NotEqual(boardBefore, boardAfter);
     }
