@@ -1,9 +1,34 @@
 namespace Cpsc370Final;
+using System;
 
 public class Grid
 {
-    // define grid (using 2d array)
-    
-    // create method to create box grid
-    
+    // Define grid (as a string)
+    private string Game_Grid =
+        @" ╔═══╦═══════╗ ╔═══╦═══════╗ ╔═══╦═══════╗" + '\n' +
+        @" ║ 1 ║       ║ ║ 2 ║       ║ ║ 3 ║       ║" + '\n' +
+        @" ╚═══╣       ║ ╚═══╣       ║ ╚═══╣       ║" + '\n' +
+        @"     ║       ║     ║       ║     ║       ║" + '\n' +
+        @"     ║       ║     ║       ║     ║       ║" + '\n' +
+        @"     ╚═══════╝     ╚═══════╝     ╚═══════╝" + '\n' +
+        @" ╔═══╦═══════╗ ╔═══╦═══════╗ ╔═══╦═══════╗" + '\n' +
+        @" ║ 4 ║       ║ ║ 5 ║       ║ ║ 6 ║       ║" + '\n' +
+        @" ╚═══╣       ║ ╚═══╣       ║ ╚═══╣       ║" + '\n' +
+        @"     ║       ║     ║       ║     ║       ║" + '\n' +
+        @"     ║       ║     ║       ║     ║       ║" + '\n' +
+        @"     ╚═══════╝     ╚═══════╝     ╚═══════╝" + '\n' +
+        @" ╔═══╦═══════╗ ╔═══╦═══════╗ ╔═══╦═══════╗" + '\n' +
+        @" ║ 7 ║       ║ ║ 8 ║       ║ ║ 9 ║       ║" + '\n' +
+        @" ╚═══╣       ║ ╚═══╣       ║ ╚═══╣       ║" + '\n' +
+        @"     ║       ║     ║       ║     ║       ║" + '\n' +
+        @"     ║       ║     ║       ║     ║       ║" + '\n' +
+        @"     ╚═══════╝     ╚═══════╝     ╚═══════╝";
+
+    // Method to display the grid
+    public void DisplayGrid()
+    {
+        Console.WriteLine(Game_Grid);
+    }
 }
+
+// Main program to test the Grid class
