@@ -3,8 +3,12 @@ using System;
 
 public class Grid
 {
+    public Grid()
+    {
+    }
+
     // Define grid (as a string)
-    private string Game_Grid =
+    private string gameGrid =
         @" ╔═══╦═══════╗ ╔═══╦═══════╗ ╔═══╦═══════╗" + '\n' +
         @" ║ 1 ║       ║ ║ 2 ║       ║ ║ 3 ║       ║" + '\n' +
         @" ╚═══╣       ║ ╚═══╣       ║ ╚═══╣       ║" + '\n' +
@@ -25,9 +29,9 @@ public class Grid
         @"     ╚═══════╝     ╚═══════╝     ╚═══════╝";
 
     // Method to display the grid
-    public void DisplayGrid()
+    public string DisplayGrid()
     {
-        Console.WriteLine(Game_Grid);
+        return gameGrid;
     }
 }
 

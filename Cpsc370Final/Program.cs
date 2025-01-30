@@ -4,7 +4,39 @@ class Program
 {
     static void Main(string[] args)
     {
-        Game game = Game.GetInstance();
+        if (OperatingSystem.IsWindows())
+        {
+            Console.WindowWidth = Math.Max(Console.WindowWidth, 50);
+            Console.WindowHeight = Math.Max(Console.WindowHeight, 22);
+        }
+
+
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine("Whack A Corgi (Corgi Edition)");
+            Console.WriteLine();
+            Console.WriteLine(
+                $"You have 60 seconds to whack as many Corgis as you " +
+                "can before the timer runs out. Use the number keys 1-9 to whack. Are you ready? ");
+            Console.WriteLine();
+            Console.WriteLine("Play [enter], or quit [escape]?");
+            GetInput:
+            switch (Console.ReadKey(true).Key)
+            {
+                case ConsoleKey.Enter:
+                    Game game = Game.GetInstance();
+                    game.Play();
+                    break;
+                case ConsoleKey.Escape:
+                    Console.Clear();
+                    Console.WriteLine("Whack A Corgi was closed...");
+                    Environment.Exit(0);
+                    break;
+                default:
+                    goto GetInput;
+            }
+        } 
     }
 
     // this is just an example of how to get the command
