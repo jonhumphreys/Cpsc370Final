@@ -23,6 +23,11 @@ public class Score
     {
         return _score;
     }
+
+    public string PrintScore()
+    {
+        return "Score: " + _score;
+    }
 }
 
 public class UserInterface
