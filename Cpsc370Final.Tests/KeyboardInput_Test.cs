@@ -29,7 +29,7 @@ public class KeyboardInput_Test
     [InlineData("7", "D7 has been pressed")]
     [InlineData("8", "D8 has been pressed")]
     [InlineData("9", "D9 has been pressed")]
-    [InlineData("Enter", "Enter has been pressed")]
+    [InlineData("\r", "Enter has been pressed")]
     public void CharacterKeyboardInput_AllKeysUsedInGame_TriggersEachEvent(string userKeyInput, string expectedOutput)
     {
         var input = new StringReader(userKeyInput);

@@ -10,14 +10,8 @@ public class GridTests
     {
         // Arrange - Set up the test environment
         Grid grid = new Grid(); // Create a Grid instance
-        StringWriter sw = new StringWriter(); // Create a string writer to capture console output
-        Console.SetOut(sw);
-
-        // Act - Execute the method
-        grid.DisplayGrid(); 
-
-        // Assert - Verify expected output is present
-        string result = sw.ToString().Trim(); // Capture the printed console output
+        
+        string result = grid.DisplayGrid(); // Capture the printed console output
 
         Assert.Contains("║ 1 ║", result); // Check if the 9 boxes appears in the output
         Assert.Contains("║ 2 ║", result); 
